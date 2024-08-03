@@ -1,0 +1,415 @@
+/* Global Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+a:hover {
+  color: #0056b3;
+}
+
+/* Header Styles */
+header {
+  background-color: #007bff;
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 28px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav li {
+  margin-left: 20px;
+}
+
+nav a {
+  color: #fff;
+}
+
+nav a:hover {
+  color: #cce5ff;
+}
+
+/* Section Styles */
+section {
+  padding: 40px;
+}
+
+section h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Projects Section Styles */
+.section-controls {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.add-project-btn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 40px;
+  cursor: pointer;
+}
+
+.edit-project-title {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 40px;
+  cursor: pointer;
+  margin-left: 10px; /* Space between buttons */
+}
+
+.add-project-btn:hover {
+  background-color: #0056b3;
+}
+
+.edit-project-title:hover {
+  background-color: #0056b3;
+}
+
+.project-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
+}
+
+/* Project Box Styles */
+.project {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.project-images {
+  display: flex;
+  overflow-x: auto;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.project-image {
+  flex: 0 0 auto;
+  width: auto;
+  max-width: 200px;
+  height: auto;
+  margin-right: 10px;
+  border-radius: 4px;
+}
+
+.project-image:last-child {
+  margin-right: 0;
+}
+
+.project h3 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.project-description {
+  margin-top: 10px;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #555;
+  white-space: pre-line; 
+}
+
+/* Input Box Styling for Editing */
+.project input[type="text"],
+.project textarea {
+  width: calc(100% - 20px);
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  font-size: 1rem;
+  color: #333;
+  background-color: #fff;
+  min-height: 35px;
+}
+
+.project textarea {
+  resize: vertical;
+  height: 80px;
+  min-height: 80px;
+}
+
+/* Button Styling */
+.add-image-btn,
+.edit-project-btn,
+.done-project-btn,
+.remove-project-btn {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.add-image-btn {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+
+.edit-project-btn {
+  background-color: #2196F3; /* Blue */
+  color: white;
+}
+
+.done-project-btn {
+  background-color: #008CBA; /* Blue */
+  color: white;
+}
+
+.remove-project-btn {
+  background-color: #f44336; /* Red */
+  color: white;
+}
+
+/* Contact Form Styles */
+form ul {
+  list-style: none;
+}
+
+form li {
+  margin-bottom: 20px;
+}
+
+form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+form input[type="text"],
+form input[type="phone"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+form button[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+form button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #f2f2f2;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.create-view-btn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.create-view-btn:hover {
+  background-color: #0056b3;
+}
+
+.hidden {
+  display: none;
+}
+
+/* About Me Section Styles */
+#about {
+  text-align: left;
+}
+
+#about p {
+  margin-bottom: 20px;
+  white-space: pre-line; 
+}
+
+.edit-about-me-btn,
+.edit-projects-btn,
+.done-about-projects-btn,
+.done-about-me-btn {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.edit-about-me-btn {
+  background-color: #2196F3; /* Blue */
+  color: white;
+}
+
+.done-about-me-btn {
+  background-color: #008CBA; /* Blue */
+  color: white;
+}
+
+.edit-projects-btn {
+  background-color: #2196F3; /* Blue */
+  color: white;
+}
+
+.done-about-projects-btn {
+  background-color: #008CBA; /* Blue */
+  color: white;
+}
+
+/* About Me Section Input Styling */
+#about input[type="text"],
+#about textarea {
+  width: 100%; 
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  font-size: 1rem; 
+  color: #333; 
+  background-color: #fff; 
+  resize: vertical;
+  overflow-y: auto;
+  line-height: 1.5;
+  min-height: 80px; 
+}
+
+/* Styles for Editable Content */
+#about p, 
+#projects h2, 
+#about-projects-text p,
+.project-description {
+  white-space: pre-wrap;
+  font-size: 1rem;       
+}
+
+/* Common styles for edit and done buttons */
+.edit-btn, .done-editing-btn {
+  padding: 5px 10px;
+  border: none;
+  background-color: lightblue;
+  cursor: pointer;  
+}
+
+.done-editing-btn {
+  background-color: lightgreen;
+}
+
+/* Style the textarea to match the content */
+textarea {
+  font-family: inherit;
+  font-size: 1rem;       
+  padding: 5px;          
+  border: 1px solid #ccc; 
+  width: 100%;           
+}
+
+/* Style for the new project section button */
+#addNewProjectSection,
+#deleteProjectSection {
+  padding: 10px 40px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: block;           
+  margin: 20px auto;       
+}
+
+#addNewProjectSection {
+  background-color: #007bff; /* Example */
+}
+
+#deleteProjectSection {
+  background-color: #ff0000; /* Example */
+}
+
+/* Contact Me Section Styles */
+#contact {
+  text-align: left;
+}
+
+#contact h2 {
+  margin-bottom: 20px;
+}
+
+#contact-info {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+#contact-info li {
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  margin-bottom: 10px;
+}
+
+#contact-info label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+#edit-contact-btn {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+#edit-contact-btn:hover {
+  background-color: #0056b3;
+}

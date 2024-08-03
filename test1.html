@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="test1.css">
+</head>
+<body>
+  <header style="position: fixed; top: 0; width: 100%; background-color: #111674; z-index: 100;"> 
+    <h1>My Portfolio</h1>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>This is a brief introduction about myself and my work.</p>
+    <button class="edit-about-me-btn">Edit</button> 
+  </section>
+  
+  <section id="main" style="display: none;"> 
+    <!-- Remove the initial project section from here -->
+  </section>
+
+  <button id="addNewProjectSection">Add New Project Section</button> 
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <ul id="contact-info"> 
+      <li>
+        <label for="name">Name:</label>
+        <span id="contact-name">Your Name</span> 
+      </li>
+      <li>
+        <label for="email">Email:</label>
+        <span id="contact-email">your.email@example.com</span> 
+      </li>
+      <li>
+        <label for="phone">Phone:</label>
+        <span id="contact-phone">+1-555-555-5555</span> 
+      </li>
+      <li>
+        <label for="location">Location:</label>
+        <span id="contact-location">Your City, Country</span> 
+      </li>
+      <li>
+        <label for="linkedin">linkedin:</label>
+        <span id="contact-linkedin">Your link</span> 
+      </li>
+    </ul>
+    <button id="edit-contact-btn" class="edit-contact-btn">Edit</button> 
+  </section>
+
+  <footer>
+    <p>&copy; 2024 My Portfolio. All rights reserved.</p>
+    <button class="create-view-btn">Create/View</button>
+  </footer>
+
+  <script src="test1.js"></script>
+</body>
+</html>
