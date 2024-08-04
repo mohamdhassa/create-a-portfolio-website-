@@ -59,6 +59,7 @@ section {
 
 section h2 {
   font-size: 24px;
+  margin-top: 45px;
   margin-bottom: 20px;
 }
 
@@ -97,35 +98,48 @@ section h2 {
 }
 
 .project-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: 20px;
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap */
+  justify-content: center; /* Center the items */
 }
 
 /* Project Box Styles */
 .project {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 300px;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  flex: 1 0 300px; /* Default width */
+  margin: 10px;
+  transition: flex 0.3s ease; /* Add a smooth transition effect */
+  cursor: pointer; /* Make the project box clickable */
+  position: relative; /* For absolute positioning of the content */
+  border: 1px solid #ccc; /* Add a border to the project box */
+  border-radius: 5px; /* Add rounded corners to the project box */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a box shadow to the project box */
+}
+
+.project.expanded {
+  flex: 1 0 90%; /* Expanded width */
+  position: fixed; /* Position the project box fixed */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center the project box */
+  z-index: 100; /* Ensure the project box is on top */
+  background-color: white; /* Add a white background to the expanded project box */
+  padding: 20px; /* Add padding to the expanded project box */
+  border-radius: 10px; /* Add rounded corners to the expanded project box */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a box shadow to the expanded project box */
 }
 
 .project-images {
   display: flex;
-  overflow-x: auto;
-  width: 100%;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  width: 100%; /* Make the container take up the full width of the project box */
   margin-bottom: 10px;
 }
 
 .project-image {
-  flex: 0 0 auto;
-  width: auto;
-  max-width: 200px;
-  height: auto;
+  flex: 0 0 auto; /* Allow images to scale naturally */
+  width: auto; /* Allow images to scale naturally */
+  max-width: 100%; /* Ensure images don't exceed the container width */
+  height: auto; /* Maintain aspect ratio */
   margin-right: 10px;
   border-radius: 4px;
 }
@@ -246,6 +260,7 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  
 }
 
 .create-view-btn {
@@ -402,14 +417,78 @@ textarea {
 }
 
 #edit-contact-btn {
-  padding: 10px 20px;
+  padding: 15px 30px;
   background-color: #007bff;
   color: white;
   border: none;
   cursor: pointer;
-  border-radius: 4px;
+  border-radius: 10px;
 }
 
 #edit-contact-btn:hover {
   background-color: #0056b3;
+}
+.project:hover {
+  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+  transform: scale(1.05); /* Slightly enlarge the box */
+  transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+/* ... (Your existing CSS) ... */
+
+.project-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap */
+  justify-content: center; /* Center the items */
+}
+
+.project {
+  flex: 1 0 200px; /* Default width (smaller) */
+  margin: 10px;
+  transition: flex 0.3s ease; /* Add a smooth transition effect */
+  cursor: pointer; /* Make the project box clickable */
+  position: relative; /* For absolute positioning of the content */
+  border: 1px solid #ccc; /* Add a border to the project box */
+  border-radius: 5px; /* Add rounded corners to the project box */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a box shadow to the project box */
+}
+
+.project.expanded {
+  flex: 1 0 90%; /* Expanded width */
+  position: fixed; /* Position the project box fixed */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center the project box */
+  z-index: 100; /* Ensure the project box is on top */
+  background-color: white; /* Add a white background to the expanded project box */
+  padding: 20px; /* Add padding to the expanded project box */
+  border-radius: 10px; /* Add rounded corners to the expanded project box */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a box shadow to the expanded project box */
+}
+
+/* ... (Your existing CSS) ... */
+
+.project-images {
+  display: flex;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  width: 100%; /* Make the container take up the full width of the project box */
+  margin-bottom: 10px;
+}
+
+.project-image {
+  flex: 0 0 auto; /* Allow images to scale naturally */
+  width: auto; /* Allow images to scale naturally */
+  max-width: 100%; /* Ensure images don't exceed the container width */
+  height: auto; /* Maintain aspect ratio */
+  margin-right: 10px;
+  border-radius: 4px;
+}
+
+.project-image:last-child {
+  margin-right: 0;
+}
+
+/* ... (Rest of your CSS) ... */
+.project-description {
+  max-height: 100px; /* Adjust this value as needed */
+  overflow-y: auto;
 }

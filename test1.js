@@ -84,6 +84,11 @@ function addNewProject(event) {
 
   const newProject = document.createElement('div');
   newProject.classList.add('project');
+  newProject.addEventListener('click', toggleProjectExpansion); // Add click listener
+
+  // Create a new container for the project content
+  const projectContent = document.createElement('div');
+  projectContent.classList.add('project-content');
 
   const projectTitle = document.createElement('h3');
   projectTitle.textContent = 'New Project';
@@ -113,12 +118,16 @@ function addNewProject(event) {
     newProject.remove();
   });
 
-  newProject.appendChild(projectTitle);
-  newProject.appendChild(projectImages);
-  newProject.appendChild(addImageButton);
-  newProject.appendChild(projectDescription);
-  newProject.appendChild(editButton);
-  newProject.appendChild(removeButton);
+  // Add the content to the new container
+  projectContent.appendChild(projectTitle);
+  projectContent.appendChild(projectImages);
+  projectContent.appendChild(addImageButton);
+  projectContent.appendChild(projectDescription);
+  projectContent.appendChild(editButton);
+  projectContent.appendChild(removeButton);
+
+  // Append the container to the project element
+  newProject.appendChild(projectContent);
 
   projectContainer.appendChild(newProject);
 }
@@ -416,5 +425,23 @@ document.addEventListener('DOMContentLoaded', () => {
     editContactBtn.classList.remove('done-contact-btn');
     editContactBtn.classList.add('edit-contact-btn');
   }
+});
+
+// Function to toggle project expansion
+function toggleProjectExpansion(event) {
+  const projectCard = event.target.closest('.project');
+  const isExpanded = projectCard.classList.contains('expanded');
+
+  if (isExpanded) {
+    projectCard.classList.remove('expanded'); // Remove the class
+  } else {
+    projectCard.classList.add('expanded'); // Add the class
+  }
+}
+
+const myElement = document.getElementById('myElement'); // Replace 'myElement' with the ID of your element
+
+myElement.addEventListener('wheel', (event) => {
+  myElement.scrollTop += event.deltaY; // Scroll vertically based on mouse wheel movement
 });
 
